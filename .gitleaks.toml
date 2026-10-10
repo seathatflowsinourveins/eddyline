@@ -1,0 +1,32 @@
+# gitleaks configuration: every default rule, plus the broker and account
+# rules of scripts/privacy_scan.py. The regexes below are byte-identical to
+# BROKER_RULES there; tests/test_privacy_scan.py keeps the copies equal and
+# checks that each rule fires on a canary.
+title = "eddyline"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "alpaca-key-id"
+description = "Broker API key ID: PK or AK prefix plus 18 uppercase alphanumerics"
+regex = '''\b(?:PK|AK)[A-Z0-9]{18}\b'''
+tags = ["broker"]
+
+[[rules]]
+id = "broker-account-field"
+description = "Account-number-like value in a field named like account, account_id or acct"
+regex = '''(?i)\b[a-z0-9_-]*(?:account|acct)(?:[_-]?(?:id|no|num|number))?["']?[ \t]*[:=][ \t]*["']?[a-z0-9-]*(?:[a-z0-9-]{3}[0-9]|[a-z0-9-]{2}[0-9][a-z0-9-]|[a-z0-9-][0-9][a-z0-9-]{2}|[0-9][a-z0-9-]{3})[a-z0-9-]*'''
+tags = ["broker"]
+
+[[rules]]
+id = "broker-api-host"
+description = "Broker or paid market-data API host"
+regex = '''(?i)\b(?:[a-z0-9-]+\.)*(?:alpaca\.markets|databento\.com)\b'''
+tags = ["broker"]
+
+[[rules]]
+id = "email-address"
+description = "Email address"
+regex = '''\b[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}\b'''
+tags = ["pii"]
