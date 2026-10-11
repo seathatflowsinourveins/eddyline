@@ -1,0 +1,64 @@
+{
+  "required_status_checks": [
+    {
+      "ruleset_id": 24851771,
+      "context": "privacy-scan",
+      "integration_id": null,
+      "observed_producing_app_ids": [
+        15368
+      ],
+      "evidence": [
+        {
+          "commit_sha": "d182671528af50e75784c99f4c2558a21cf367c4",
+          "check_run_id": 114291433505,
+          "app_id": 15368
+        }
+      ]
+    },
+    {
+      "ruleset_id": 24851771,
+      "context": "gitleaks",
+      "integration_id": null,
+      "observed_producing_app_ids": [
+        15368
+      ],
+      "evidence": [
+        {
+          "commit_sha": "d182671528af50e75784c99f4c2558a21cf367c4",
+          "check_run_id": 114291433494,
+          "app_id": 15368
+        }
+      ]
+    },
+    {
+      "ruleset_id": 24851771,
+      "context": "workflow-lint",
+      "integration_id": null,
+      "observed_producing_app_ids": [
+        15368
+      ],
+      "evidence": [
+        {
+          "commit_sha": "d182671528af50e75784c99f4c2558a21cf367c4",
+          "check_run_id": 114291433371,
+          "app_id": 15368
+        }
+      ]
+    },
+    {
+      "ruleset_id": 24851771,
+      "context": "dependency-review",
+      "integration_id": null,
+      "observed_producing_app_ids": [
+        15368
+      ],
+      "evidence": [
+        {
+          "commit_sha": "d182671528af50e75784c99f4c2558a21cf367c4",
+          "check_run_id": 114291434179,
+          "app_id": 15368
+        }
+      ]
+    }
+  ]
+}
